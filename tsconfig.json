@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "lib": ["ES2020"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "moduleResolution": "nodeNext",
+    "paths": {
+      "@covera/core": ["./packages/core/src/index.ts"],
+      "@covera/mcp-host": ["./packages/mcp-host/src/index.ts"],
+      "@covera/repo-profiler": ["./packages/repo-profiler/src/index.ts"],
+      "@covera/orchestrator": ["./packages/orchestrator/src/index.ts"]
+    }
+  }
+}
+

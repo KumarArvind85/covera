@@ -1,0 +1,27 @@
+{
+  "name": "@covera/cli",
+  "version": "0.1.0",
+  "description": "CLI tool for local Covera development and testing",
+  "main": "dist/index.js",
+  "bin": {
+    "covera": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/cli.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "dotenv": "^16.0.0",
+    "@covera/core": "*",
+    "@covera/mcp-host": "*",
+    "@covera/repo-profiler": "*",
+    "@covera/orchestrator": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
+  }
+}

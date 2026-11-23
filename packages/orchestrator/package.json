@@ -1,0 +1,30 @@
+{
+  "name": "@covera/orchestrator",
+  "version": "0.1.0",
+  "description": "Event-driven orchestration: webhook listener, sandbox management, artifact storage",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.0.0",
+    "@aws-sdk/client-s3": "^3.400.0",
+    "@aws-sdk/client-ec2": "^3.400.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

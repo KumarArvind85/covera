@@ -1,0 +1,28 @@
+{
+  "name": "covera-monorepo",
+  "version": "0.1.0",
+  "description": "Vendor-agnostic enterprise test generation platform powered by SeaLights coverage",
+  "private": true,
+  "workspaces": [
+    "packages/core",
+    "packages/llm-gateway",
+    "packages/mcp-host",
+    "packages/repo-profiler",
+    "packages/orchestrator",
+    "packages/cli"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "test": "npm test --workspaces",
+    "lint": "eslint packages --ext .ts,.js",
+    "type-check": "tsc --noEmit",
+    "dev": "npm run dev --workspaces"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
