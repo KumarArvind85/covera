@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces",
+    "covera": "node packages/cli/dist/cli.js",
     "test": "npm test --workspaces",
     "lint": "eslint packages --ext .ts,.js",
     "type-check": "tsc --noEmit",

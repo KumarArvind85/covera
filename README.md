@@ -62,14 +62,39 @@ SeaLights webhook → Auto-generate tests → Verify → PR in <5 minutes
 
 ### 1. Install
 
+**Prerequisites:** [Git](https://git-scm.com) and Node.js with npm (LTS; tested with Node 26).
+
 ```bash
-git clone https://github.com/covera/covera.git
+git clone https://github.com/KumarArvind85/covera.git
 cd covera
 npm install
 npm run build
 ```
 
-### 2. Configure (`.env.local`)
+> **Windows PowerShell:** if you see "running scripts is disabled", use `npm.cmd` instead of `npm`
+> (for example `npm.cmd install`), or allow scripts with
+> `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`.
+
+Verify the setup:
+
+```bash
+npm test --workspace @covera/mcp-host   # 9 tests, no network or credentials needed
+npm run covera -- config                # shows which settings are detected
+```
+
+`node_modules/`, `dist/` and `.env` are git-ignored, so a fresh clone always needs the
+install and build steps above. Run any CLI command with `npm run covera -- <command>`.
+The `npx covera <command>` form used below also works after you run `npm install` a
+second time once the build has finished (npm only links the `covera` command when
+`packages/cli/dist` exists).
+
+### 2. Configure (`.env`)
+
+Copy the template and fill in your values. The CLI reads `.env` from the directory you run it in.
+
+```bash
+cp .env.template .env        # PowerShell: Copy-Item .env.template .env
+```
 
 ```bash
 LLM_VENDOR=openai                    # or: anthropic, google, local
